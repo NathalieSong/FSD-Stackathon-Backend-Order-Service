@@ -1,4 +1,4 @@
-package com.emart.order.service.orderservice.Service;
+package com.emart.order.service.orderservice.service;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -9,9 +9,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import com.emart.order.service.orderservice.Entity.PurchaseHistory;
+import com.emart.order.service.orderservice.entity.PurchaseHistory;
 import com.emart.order.service.orderservice.FeignClient.ItemServiceClient;
-import com.emart.order.service.orderservice.Repository.PurchaseHistoryRepository;
+import com.emart.order.service.orderservice.repository.PurchaseHistoryRepository;
 import com.emart.order.service.orderservice.dto.PurchaseHistoryDto;
 import com.emart.order.service.orderservice.dto.SellingReportDto;
 import com.emart.order.service.orderservice.dto.StockItemDto;

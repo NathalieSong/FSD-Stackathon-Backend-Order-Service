@@ -1,19 +1,19 @@
-package com.emart.order.service.orderservice.Service;
+package com.emart.order.service.orderservice.service;
 
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-import com.emart.order.service.orderservice.Entity.Order;
-import com.emart.order.service.orderservice.Entity.OrderItem;
-import com.emart.order.service.orderservice.Entity.PurchaseHistory;
-import com.emart.order.service.orderservice.Entity.Transaction;
+import com.emart.order.service.orderservice.entity.Order;
+import com.emart.order.service.orderservice.entity.OrderItem;
+import com.emart.order.service.orderservice.entity.PurchaseHistory;
+import com.emart.order.service.orderservice.entity.Transaction;
 import com.emart.order.service.orderservice.FeignClient.ItemServiceClient;
-import com.emart.order.service.orderservice.Repository.OrderItemRepository;
-import com.emart.order.service.orderservice.Repository.OrderRepository;
-import com.emart.order.service.orderservice.Repository.PurchaseHistoryRepository;
-import com.emart.order.service.orderservice.Repository.TransactionRepository;
+import com.emart.order.service.orderservice.repository.OrderItemRepository;
+import com.emart.order.service.orderservice.repository.OrderRepository;
+import com.emart.order.service.orderservice.repository.PurchaseHistoryRepository;
+import com.emart.order.service.orderservice.repository.TransactionRepository;
 import com.emart.order.service.orderservice.dto.CheckoutDto;
 import com.emart.order.service.orderservice.dto.DiscountDto;
 import com.emart.order.service.orderservice.dto.TaxDto;

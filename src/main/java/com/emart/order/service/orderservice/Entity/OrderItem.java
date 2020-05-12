@@ -1,4 +1,4 @@
-package com.emart.order.service.orderservice.Entity;
+package com.emart.order.service.orderservice.entity;
 
 import java.math.BigDecimal;
 

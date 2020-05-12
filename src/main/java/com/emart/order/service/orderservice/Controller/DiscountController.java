@@ -1,6 +1,6 @@
-package com.emart.order.service.orderservice.Controller;
+package com.emart.order.service.orderservice.controller;
 
-import com.emart.order.service.orderservice.Service.DiscountService;
+import com.emart.order.service.orderservice.service.DiscountService;
 import com.emart.order.service.orderservice.dto.DiscountDto;
 
 import org.springframework.beans.factory.annotation.Autowired;

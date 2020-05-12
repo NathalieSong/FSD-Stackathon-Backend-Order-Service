@@ -1,9 +1,9 @@
-package com.emart.order.service.orderservice.Service;
+package com.emart.order.service.orderservice.service;
 
 import java.util.Date;
 
-import com.emart.order.service.orderservice.Entity.Discount;
-import com.emart.order.service.orderservice.Repository.DiscountRepository;
+import com.emart.order.service.orderservice.entity.Discount;
+import com.emart.order.service.orderservice.repository.DiscountRepository;
 import com.emart.order.service.orderservice.dto.DiscountDto;
 
 import org.springframework.beans.BeanUtils;

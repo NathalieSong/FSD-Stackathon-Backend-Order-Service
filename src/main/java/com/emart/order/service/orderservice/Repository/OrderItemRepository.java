@@ -1,9 +1,9 @@
-package com.emart.order.service.orderservice.Repository;
+package com.emart.order.service.orderservice.repository;
 
-import com.emart.order.service.orderservice.Entity.Order;
+import com.emart.order.service.orderservice.entity.Order;
 import java.util.List;
 
-import com.emart.order.service.orderservice.Entity.OrderItem;
+import com.emart.order.service.orderservice.entity.OrderItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface OrderItemRepository extends JpaRepository<OrderItem, String> {

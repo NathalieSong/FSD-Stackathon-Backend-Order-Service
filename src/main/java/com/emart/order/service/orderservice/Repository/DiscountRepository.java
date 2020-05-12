@@ -1,8 +1,8 @@
-package com.emart.order.service.orderservice.Repository;
+package com.emart.order.service.orderservice.repository;
 
 import java.util.Date;
 
-import com.emart.order.service.orderservice.Entity.Discount;
+import com.emart.order.service.orderservice.entity.Discount;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

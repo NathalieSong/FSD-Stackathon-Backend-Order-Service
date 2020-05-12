@@ -1,8 +1,8 @@
-package com.emart.order.service.orderservice.Controller;
+package com.emart.order.service.orderservice.controller;
 
 import java.util.List;
 
-import com.emart.order.service.orderservice.Service.ReportService;
+import com.emart.order.service.orderservice.service.ReportService;
 import com.emart.order.service.orderservice.dto.PurchaseHistoryDto;
 import com.emart.order.service.orderservice.dto.SellingReportDto;
 import com.emart.order.service.orderservice.dto.StockItemDto;
