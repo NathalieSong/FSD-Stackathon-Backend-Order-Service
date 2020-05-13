@@ -8,7 +8,6 @@ public enum TransactionType {
     CREDIT("credit"),
     DEBIT("debit");
     
-
     private final String type;
     
     @JsonValue
