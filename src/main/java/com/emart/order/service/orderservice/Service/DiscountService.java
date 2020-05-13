@@ -2,6 +2,8 @@ package com.emart.order.service.orderservice.service;
 
 import java.util.Date;
 
+import javax.transaction.Transactional;
+
 import com.emart.order.service.orderservice.entity.Discount;
 import com.emart.order.service.orderservice.repository.DiscountRepository;
 import com.emart.order.service.orderservice.dto.DiscountDto;
@@ -27,7 +29,12 @@ public class DiscountService {
 		return toDto(
             discountRepo.save(discount)
         );
-	}
+    }
+    
+    @Transactional
+    public void rmDiscountByCode(String code) {
+        discountRepo.deleteByCode(code);
+    }
     
     private DiscountDto toDto(Discount discount) {
         if (discount == null) {
