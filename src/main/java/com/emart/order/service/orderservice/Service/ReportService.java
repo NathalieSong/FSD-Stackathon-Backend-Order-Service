@@ -1,6 +1,7 @@
 package com.emart.order.service.orderservice.service;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -49,12 +50,14 @@ public class ReportService {
 
 	public List<SellingReportDto> getSellingReportByFilter(SellingReportFilter filter) {
 		return getSellingReportByQueryResult(
-			queryItemsSoldByPeriod(filter.getSellerId(), filter.getStartPeriod(), filter.getEndPeriod())
+			querySellingReportByPeriod(filter.getSellerId(), filter.getStartPeriod(), filter.getEndPeriod())
 		);
 	}
 
 	public List<StockItemDto> getAllSellingStock(String sellerId) {
-		return null;
+		return getSellingStockByQueryResult(
+			querySellingStock(sellerId)
+		);
 	}
 
 	private PurchaseHistoryDto toPurchaseHistoryDto(PurchaseHistory ph, Item item) {
@@ -75,7 +78,7 @@ public class ReportService {
 		return phDto;
 	}
 
-	private List<Object[]> queryItemsSoldByPeriod(String sellerId, Date startPeriod, Date endPeriod) {
+	private List<Object[]> querySellingReportByPeriod(String sellerId, Date startPeriod, Date endPeriod) {
 		String sql = "select item_id, sum(total_before_discount), count(1)"
 		  + " from purchase_history where seller_id = :sellerId and created_date between :startPeriod and :endPeriod"
 		  + " group by item_id";
@@ -94,7 +97,7 @@ public class ReportService {
 				SellingReportDto dto = new SellingReportDto();
 				dto.setItemId((String) obj[0]);
 				dto.setTotal((BigDecimal) obj[1]);
-				dto.setNoSold((BigDecimal) obj[2]);
+				dto.setNoSold(((BigInteger) obj[2]).intValue());
 				Item item = itemClient.getById(dto.getItemId());
 				dto.setItemName(item.getName());
 				result.add(dto);
@@ -103,7 +106,7 @@ public class ReportService {
 		return result;
 	}
 
-	private List<Object[]> queryItemsSold(String sellerId) {
+	private List<Object[]> querySellingStock(String sellerId) {
 		String sql = "select item_id, sum(total_before_discount), count(1)"
 		  + " from purchase_history where seller_id = :sellerId"
 		  + " group by item_id";
@@ -123,7 +126,7 @@ public class ReportService {
 				dto.setName(item.getName());
 				dto.setDescription(item.getDescription());
 				dto.setNoInStock(item.getStockNumber());
-				dto.setNoSold((BigDecimal) obj[2]);
+				dto.setNoSold(((BigInteger) obj[2]).intValue());
 				dto.setPrice(item.getPrice());
 				dto.setPicture(item.getPictures().get(0).toString());
 				result.add(dto);

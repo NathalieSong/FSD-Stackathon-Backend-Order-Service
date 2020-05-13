@@ -17,3 +17,8 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL57InnoDBDialect
+
+feign:
+  items:
+    name: items
+    url: http://127.0.0.1:9001

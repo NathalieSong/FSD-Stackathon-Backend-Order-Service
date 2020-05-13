@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(url = "http://127.0.0.1:9001")
-@RequestMapping("api")
+@FeignClient(name = "${feign.items.name}", url = "${feign.items.url}")
+@RequestMapping("api/item")
 public interface ItemServiceClient {
-    @GetMapping("")
+    @GetMapping("/byId")
     public Item getById(@RequestParam("itemId") String itemId);
 }

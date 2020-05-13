@@ -9,8 +9,8 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "Order")
-public class Order {
+@Table(name = "EmartOrder")
+public class EmartOrder {
     @Id
     @GenericGenerator(name = "order-uuid2", strategy = "uuid2")
     @GeneratedValue(generator = "order-uuid2")

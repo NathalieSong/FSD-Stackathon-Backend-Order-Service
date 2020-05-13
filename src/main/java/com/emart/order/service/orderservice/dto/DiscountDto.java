@@ -1,6 +1,7 @@
 package com.emart.order.service.orderservice.dto;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 import lombok.Data;
 
@@ -10,4 +11,6 @@ public class DiscountDto {
     private String code;
     private BigDecimal percentage;
     private String description;
+    private Date startDate;
+    private Date endDate;
 }

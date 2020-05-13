@@ -21,7 +21,7 @@ public class FinancialController {
     @Autowired
     private FinancialService financialService;
 
-    @PostMapping("/getTax")
+    @PostMapping("/tax")
     public TaxDto getTax(@RequestBody TaxReqBody taxReq) {        
         return financialService.getTax(taxReq);
     }

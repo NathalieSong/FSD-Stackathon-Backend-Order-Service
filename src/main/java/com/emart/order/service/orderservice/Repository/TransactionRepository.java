@@ -2,10 +2,10 @@ package com.emart.order.service.orderservice.repository;
 
 import java.util.List;
 
-import com.emart.order.service.orderservice.entity.Order;
-import com.emart.order.service.orderservice.entity.Transaction;
+import com.emart.order.service.orderservice.entity.EmartOrder;
+import com.emart.order.service.orderservice.entity.EmartTransaction;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface TransactionRepository extends JpaRepository<Transaction, String> {
-    List<Transaction> findByOrder(Order order);
+public interface TransactionRepository extends JpaRepository<EmartTransaction, String> {
+    List<EmartTransaction> findByOrder(EmartOrder order);
 }

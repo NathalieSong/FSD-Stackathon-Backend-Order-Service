@@ -11,7 +11,7 @@ public class PurchaseHistoryDto {
     private String itemId;
     private String itemName;
     private String itemDesc;
-    private Number quantity;
+    private Integer quantity;
     private String discountCode;
     private BigDecimal discountPercentage;
     private Date createdDate;

@@ -17,7 +17,7 @@ public class Item {
     private BigDecimal price;
     private String manufacturer;
     private String remarks;
-    private Number stockNumber;
+    private Integer stockNumber;
     private String sellerId;
     private JSONObject specification;
     private JSONArray pictures;

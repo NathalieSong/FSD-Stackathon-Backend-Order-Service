@@ -20,6 +20,14 @@ public class DiscountService {
             discountRepo.findActiveByCode(code, new Date())
         );
     }
+
+	public DiscountDto addDiscount(DiscountDto dto) {
+        Discount discount = fromDto(dto);
+        discount.setId(null);
+		return toDto(
+            discountRepo.save(discount)
+        );
+	}
     
     private DiscountDto toDto(Discount discount) {
         if (discount == null) {
@@ -28,5 +36,14 @@ public class DiscountService {
         DiscountDto dDto = new DiscountDto();
         BeanUtils.copyProperties(discount, dDto);
         return dDto;
+    }
+
+    private Discount fromDto(DiscountDto dto) {
+        if (dto == null) {
+            return null;
+        }
+        Discount discount = new Discount();
+        BeanUtils.copyProperties(dto, discount);
+        return discount;
     }
 }

@@ -32,7 +32,7 @@ public class PurchaseHistory {
     private String categoryId;
 
     @Column(name = "quantity")
-    private Number quantity;
+    private Integer quantity;
 
     @Column(name = "discountCode")
     private String discountCode;

@@ -8,6 +8,6 @@ import lombok.Data;
 public class SellingReportDto {
     private String itemId;
     private String itemName;
-    private Number noSold;
+    private Integer noSold;
     private BigDecimal total;
 }

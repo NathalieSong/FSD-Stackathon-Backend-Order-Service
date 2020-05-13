@@ -12,8 +12,8 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "Transaction")
-public class Transaction {
+@Table(name = "EmartTransaction")
+public class EmartTransaction {
     @Id
     @GenericGenerator(name = "transaction-uuid2", strategy = "uuid2")
     @GeneratedValue(generator = "transaction-uuid2")
@@ -23,7 +23,7 @@ public class Transaction {
     private String buyerId;
 
     @Column(name = "type")
-    private TransactionType type;
+    private String type;
 
     @Column(name = "createdDate")
     private Date createdDate;
@@ -31,7 +31,7 @@ public class Transaction {
     @Column(name = "total")
     private BigDecimal total;
 
-    @OneToOne(fetch = FetchType.LAZY, targetEntity = Order.class)
+    @OneToOne(fetch = FetchType.LAZY, targetEntity = EmartOrder.class)
     @JoinColumn(name = "orderId", referencedColumnName = "id", nullable = false)
-    private Order order;
+    private EmartOrder order;
 }

@@ -16,14 +16,14 @@ public class OrderItem {
     private String id;
 
     @Column(name = "quantity")
-    private Number quantity;
+    private Integer quantity;
 
     @Column(name = "itemId")
     private String itemId;
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Order.class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = EmartOrder.class)
     @JoinColumn(name = "orderId", referencedColumnName = "id", nullable = false)
-    private Order order;
+    private EmartOrder order;
 
     @Column(name = "total")
     private BigDecimal total;

@@ -10,7 +10,7 @@ public class StockItemDto {
     private String name;
     private String description;
     private BigDecimal price;
-    private Number noInStock;
-    private Number noSold;
+    private Integer noInStock;
+    private Integer noSold;
     private String picture;
 }
