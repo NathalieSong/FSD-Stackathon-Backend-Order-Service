@@ -1,9 +1,9 @@
 server:
-  port: 9002
+  port: 9003
 
 spring:
   application:
-    name: order-service
+    name: emart-order-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/order_db
@@ -21,4 +21,11 @@ spring:
 feign:
   items:
     name: items
-    url: http://127.0.0.1:9001
+    url: http://127.0.0.1:9004
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:9000/eureka

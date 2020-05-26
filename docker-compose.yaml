@@ -1,0 +1,17 @@
+version: "3"
+services:
+  emart-order-service:
+    image: emart-order-service:latest
+    environment:
+      - DB_SERVER=127.0.0.1
+      - DB_PORT=3306
+      - DB_SCHEMA=order_db
+      - DB_USERNAME=order_db
+      - DB_PASSWORD=Order123
+      - EUREKA_URL=http://localhost:9000/eureka
+    deploy:
+      mode: replicated
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    network_mode: "host"
