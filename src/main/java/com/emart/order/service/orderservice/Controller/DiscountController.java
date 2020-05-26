@@ -14,17 +14,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/discount")
+@RequestMapping("discount")
 public class DiscountController {
     @Autowired
     private DiscountService discountService;
 
-    @GetMapping("")
+    @GetMapping("/code")
     public DiscountDto getActiveByCode(@RequestParam String code) {
         return discountService.getActiveByCode(code);
     }
 
-    @PostMapping("")
+    @PostMapping("/add")
     public ResponseEntity<DiscountDto> addDiscount(@RequestBody DiscountDto dto) {
         return new ResponseEntity<DiscountDto>(
             discountService.addDiscount(dto),
