@@ -8,7 +8,7 @@ services:
       - DB_SCHEMA=order_db
       - DB_USERNAME=order_db
       - DB_PASSWORD=Order123
-      - EUREKA_URL=http://localhost:9000/eureka
+      - EUREKA_URL=http://localhost:9999/eureka
     deploy:
       mode: replicated
       replicas: 1
